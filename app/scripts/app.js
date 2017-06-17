@@ -64,6 +64,12 @@ Instructions:
 
     Your code goes here!
      */
-    // getJSON('../data/earth-like-results.json')
+    getJSON('../data/earth-like-results.json').then(res => {
+      createPlanetThumb(res);
+      console.log(res.results);
+    }).catch(err => {
+      createPlanetThumb("Unknown");
+      console.log(Error(err));
+    });
   });
 })(document);
